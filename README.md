@@ -1,5 +1,35 @@
-# Vue 3 + Vite
+Интерфейс для поиска компании по БИН и просмотра истории найденных компаний.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## ⚙️ Стек
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+- Vue 3 (Composition API)
+- Vue Router
+- Axios
+- Vite
+- Чистый CSS (без Tailwind)
+
+---
+
+## 🚀 Установка и запуск
+
+```bash
+npm install
+npm run dev
+```
+🧭 Страницы
+
+/ — Главная: кнопки "Поиск по БИН" и "История поиска"
+/search — Ввод БИН и получение данных через /api/company/{bin}
+/history — История всех найденных компаний (из базы)
+
+⚙️ Настройки proxy
+
+Для корректной работы с backend убедитесь, что в vite.config.js настроен proxy:
+
+```
+server: {
+  proxy: {
+    '/api': 'http://localhost:8080'
+  }
+}
+```
